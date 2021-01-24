@@ -66,7 +66,7 @@ public class Main {
         if (time <= 0 || time > 24) {
             System.out.println("Please check you input time");
         } else {
-            if (time < 12 ) {
+            if (time < 12) {
                 System.out.println("Good morning, sunshine!");
             }
             if (time >= 13 && time <= 19) {
@@ -76,13 +76,56 @@ public class Main {
                 System.out.println("Good evening, go have some rest!");
             }
         }
-//
+
+
+    }
+
+    static void Assignment1_3() {
+        short date = 30;
+        short month = 6;
+        short year = 1988;
+
+        if (year < 0 || year > 9999) {
+            System.out.println("Invalid year");
+        }
+        if (month < 1 || month > 12) {
+            System.out.println("Invalid month");
+        }
+        if (date < 1 || date > 31) {
+            System.out.println("Invalid date");
+        } else {
+            System.out.println(year + "/" + month + "/" + date);
+        }
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please enter the year: ");
+        year = input.nextShort();
+        System.out.print("Please enter the month: ");
+        month = input.nextShort();
+        System.out.print("Please enter the date: ");
+        date = input.nextShort();
+
+        if (year < 0 || year > 9999) {
+            System.out.println("Invalid year");
+        } else {
+            if (month < 1 || month > 12) {
+                System.out.println("Invalid month");
+            } else {
+                if (date < 1 || date > 31) {
+                    System.out.println("Invalid date");
+                } else {
+                    System.out.println(year + "/" + month + "/" + date);
+
+                }
+            }
+
+        }
 
     }
 
     public static void main(String[] args) {
         //Assignment1_1();
-        Assignment1_2();
+        //Assignment1_2();
+        Assignment1_3();
     }
 
 }
