@@ -3,7 +3,7 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
-    static void Assignment1() {
+    static void Assignment1_1() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter integer number: ");
 
@@ -57,7 +57,7 @@ public class Main {
             }
 
     public static void main(String[] args) {
-        Assignment1();
+        Assignment1_1();
 
     }
 }
