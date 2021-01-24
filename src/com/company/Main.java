@@ -122,10 +122,70 @@ public class Main {
 
     }
 
+    static void Assignment1_4() {
+        short dayNumber;
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please write a number: ");
+        dayNumber = input.nextShort();
+
+        if (dayNumber <= 0 || dayNumber > 365) {
+            System.out.println("Invalid number range; please input a number from 1 to 365");
+        } else
+            System.out.println("The day number is: " + dayNumber);
+            if (dayNumber>0 && dayNumber <= 31) {
+                System.out.println("It is: January");
+            }
+         else
+            if (dayNumber > 31 && dayNumber <= 59) {
+                System.out.println("It is: February");
+            }
+         else
+            if (dayNumber > 59 && dayNumber <= 90) {
+                System.out.println("It is: March");
+            }
+        else
+            if (dayNumber > 90 && dayNumber <= 120) {
+                System.out.println("It is: April");
+            }
+         else
+            if (dayNumber > 120 && dayNumber <= 151) {
+                System.out.println("It is: May");
+            }
+         else
+            if (dayNumber > 151 && dayNumber <= 181) {
+                System.out.println("It is: June");
+            }
+        else
+            if (dayNumber > 181 && dayNumber <= 212) {
+                System.out.println("It is: July");
+            }
+         else
+            if (dayNumber > 212 && dayNumber <= 243) {
+                System.out.println("It is: August");
+            }
+         else
+            if (dayNumber > 243 && dayNumber <= 273) {
+                System.out.println("It is: September");
+            }
+         else
+            if (dayNumber > 273 && dayNumber <= 304) {
+                System.out.println("It is: October");
+            }
+         else
+            if (dayNumber > 304 && dayNumber <= 324) {
+                System.out.println("It is: November");
+            }
+         else
+            if (dayNumber > 324 && dayNumber <= 355) {
+                System.out.println("It is: December");
+            }
+        }
     public static void main(String[] args) {
         //Assignment1_1();
         //Assignment1_2();
-        Assignment1_3();
+        //Assignment1_3();
+        Assignment1_4();
     }
 
 }
