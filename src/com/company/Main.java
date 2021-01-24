@@ -133,59 +133,65 @@ public class Main {
             System.out.println("Invalid number range; please input a number from 1 to 365");
         } else
             System.out.println("The day number is: " + dayNumber);
-            if (dayNumber>0 && dayNumber <= 31) {
-                System.out.println("It is: January");
-            }
-         else
-            if (dayNumber > 31 && dayNumber <= 59) {
-                System.out.println("It is: February");
-            }
-         else
-            if (dayNumber > 59 && dayNumber <= 90) {
-                System.out.println("It is: March");
-            }
-        else
-            if (dayNumber > 90 && dayNumber <= 120) {
-                System.out.println("It is: April");
-            }
-         else
-            if (dayNumber > 120 && dayNumber <= 151) {
-                System.out.println("It is: May");
-            }
-         else
-            if (dayNumber > 151 && dayNumber <= 181) {
-                System.out.println("It is: June");
-            }
-        else
-            if (dayNumber > 181 && dayNumber <= 212) {
-                System.out.println("It is: July");
-            }
-         else
-            if (dayNumber > 212 && dayNumber <= 243) {
-                System.out.println("It is: August");
-            }
-         else
-            if (dayNumber > 243 && dayNumber <= 273) {
-                System.out.println("It is: September");
-            }
-         else
-            if (dayNumber > 273 && dayNumber <= 304) {
-                System.out.println("It is: October");
-            }
-         else
-            if (dayNumber > 304 && dayNumber <= 324) {
-                System.out.println("It is: November");
-            }
-         else
-            if (dayNumber > 324 && dayNumber <= 355) {
-                System.out.println("It is: December");
-            }
+        if (dayNumber > 0 && dayNumber <= 31) {
+            System.out.println("It is: January");
+        } else if (dayNumber > 31 && dayNumber <= 59) {
+            System.out.println("It is: February");
+        } else if (dayNumber > 59 && dayNumber <= 90) {
+            System.out.println("It is: March");
+        } else if (dayNumber > 90 && dayNumber <= 120) {
+            System.out.println("It is: April");
+        } else if (dayNumber > 120 && dayNumber <= 151) {
+            System.out.println("It is: May");
+        } else if (dayNumber > 151 && dayNumber <= 181) {
+            System.out.println("It is: June");
+        } else if (dayNumber > 181 && dayNumber <= 212) {
+            System.out.println("It is: July");
+        } else if (dayNumber > 212 && dayNumber <= 243) {
+            System.out.println("It is: August");
+        } else if (dayNumber > 243 && dayNumber <= 273) {
+            System.out.println("It is: September");
+        } else if (dayNumber > 273 && dayNumber <= 304) {
+            System.out.println("It is: October");
+        } else if (dayNumber > 304 && dayNumber <= 324) {
+            System.out.println("It is: November");
+        } else if (dayNumber > 324 && dayNumber <= 355) {
+            System.out.println("It is: December");
         }
-    public static void main(String[] args) {
-        //Assignment1_1();
-        //Assignment1_2();
-        //Assignment1_3();
-        Assignment1_4();
     }
 
-}
+    static void Assignment1_4_2() {
+
+        short month;
+        short year;
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please input the number of the month: ");
+        month = input.nextShort();
+
+        if (month < 1 || month > 24) {
+            System.out.println("The range of the month is invalid; please input number from 1-12");
+        } else
+            System.out.print("Please input the year: ");
+        year = input.nextShort();
+
+        if (year <= 0 || year > 9999) {
+            System.out.println("The range of the year is invalid; please input number from 1-9999");
+        } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+            System.out.println("Number of days is 31");
+        } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            System.out.println("Number of days is 30");
+        } else if (month == 2) {
+            System.out.println("The number of days is 28");}
+    }
+
+        public static void main (String[]args) {
+            //Assignment1_1();
+            //Assignment1_2();
+            //Assignment1_3();
+            //Assignment1_4();
+            Assignment1_4_2();
+        }
+
+    }
+
