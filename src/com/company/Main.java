@@ -153,9 +153,9 @@ public class Main {
             System.out.println("It is: September");
         } else if (dayNumber > 273 && dayNumber <= 304) {
             System.out.println("It is: October");
-        } else if (dayNumber > 304 && dayNumber <= 324) {
+        } else if (dayNumber > 304 && dayNumber <= 334) {
             System.out.println("It is: November");
-        } else if (dayNumber > 324 && dayNumber <= 355) {
+        } else if (dayNumber > 334 && dayNumber <= 365) {
             System.out.println("It is: December");
         }
     }
@@ -169,29 +169,85 @@ public class Main {
         System.out.print("Please input the number of the month: ");
         month = input.nextShort();
 
-        if (month < 1 || month > 24) {
+        if (month < 1 || month > 12) {
             System.out.println("The range of the month is invalid; please input number from 1-12");
-        } else
+        } else {
             System.out.print("Please input the year: ");
-        year = input.nextShort();
+            year = input.nextShort();
 
-        if (year <= 0 || year > 9999) {
-            System.out.println("The range of the year is invalid; please input number from 1-9999");
-        } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-            System.out.println("Number of days is 31");
-        } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-            System.out.println("Number of days is 30");
-        } else if (month == 2) {
-            System.out.println("The number of days is 28");}
-    }
+            if (year <= 0 || year > 9999) {
+                System.out.println("The range of the year is invalid; please input number from 1-9999");
+            } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                System.out.println("Number of days is 31");
+            } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                System.out.println("Number of days is 30");
+            } else if (month == 2) {
 
-        public static void main (String[]args) {
-            //Assignment1_1();
-            //Assignment1_2();
-            //Assignment1_3();
-            //Assignment1_4();
-            Assignment1_4_2();
+                boolean isLeapYear;
+
+                //isLeapYear = (((year % 4) == 0) && ((year % 100) !=0)) || ((year % 400) ==0);
+                //if (year is not divisible by 4) then (it is a common year)
+                //else if (year is not divisible by 100) then (it is a leap year)
+                //else if (year is not divisible by 400) then (it is a common year)
+                //else (it is a leap year)
+
+                if (year % 4 == 0) {
+                    if (year % 100 != 0) {
+                        isLeapYear = true;
+                    } else
+                        {
+                        if (year % 400 != 0)
+                        {
+                            isLeapYear = false;
+                        } else
+                            {
+                            isLeapYear = true;
+                        }
+                    }
+
+                } else {
+                    isLeapYear = false;
+                }
+                if (isLeapYear) {
+                    System.out.println("Number of days is 29");
+                } else {
+                    System.out.println("The number of days is 28");
+                }
+            }
         }
-
     }
+
+    static void Assignment1_5() {
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("How many hours a day do you work?");
+        short workingHoursInDay = input.nextShort();
+        int salary;
+
+        if(workingHoursInDay<0 || workingHoursInDay>24) {
+            System.out.println("The hour range is invalid");
+        }else
+            {
+            if(workingHoursInDay<=8)
+            {
+                salary = workingHoursInDay * 10;
+            }
+            else
+                {
+                    salary = 80 + (workingHoursInDay - 8) * 15;
+                }
+                System.out.println("Your salary is " + salary);
+            }
+    }
+
+    public static void main(String[] args) {
+        //Assignment1_1();
+        //Assignment1_2();
+        //Assignment1_3();
+        Assignment1_4();
+        //Assignment1_4_2();
+        //Assignment1_5();
+    }
+
+}
 
