@@ -1,5 +1,6 @@
 package com.company;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -49,15 +50,39 @@ public class Main {
 
             System.out.println("There are no positive numbers");
         }
-        if (number < 100 || number2<100) {
+        if (number < 100 || number2 < 100) {
             System.out.println("There are numbers less than 100");
-        } else{
+        } else {
             System.out.println("There are no numbers less than 100");
         }
-            }
+    }
 
-    public static void main(String[] args) {
-        Assignment1_1();
+
+    static void Assignment1_2() {
+        int time = 100;
+        // when int time = 20, "Good evening, go have some rest!" is displayed;
+        // when int time = -2, "Good morning, sunshine!" was displayed; corrected the code accordingly;
+        //when int time=100, "please check your input time" was displayed (as expected);
+        if (time <= 0 || time > 24) {
+            System.out.println("Please check you input time");
+        } else {
+            if (time < 12 ) {
+                System.out.println("Good morning, sunshine!");
+            }
+            if (time >= 13 && time <= 19) {
+                System.out.println("Good afternoon and good luck with your work!");
+            }
+            if (time >= 20 && time <= 24) {
+                System.out.println("Good evening, go have some rest!");
+            }
+        }
+//
 
     }
+
+    public static void main(String[] args) {
+        //Assignment1_1();
+        Assignment1_2();
+    }
+
 }
