@@ -1,6 +1,5 @@
 package com.company;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -194,13 +193,10 @@ public class Main {
                 if (year % 4 == 0) {
                     if (year % 100 != 0) {
                         isLeapYear = true;
-                    } else
-                        {
-                        if (year % 400 != 0)
-                        {
+                    } else {
+                        if (year % 400 != 0) {
                             isLeapYear = false;
-                        } else
-                            {
+                        } else {
                             isLeapYear = true;
                         }
                     }
@@ -224,29 +220,82 @@ public class Main {
         short workingHoursInDay = input.nextShort();
         int salary;
 
-        if(workingHoursInDay<0 || workingHoursInDay>24) {
+        if (workingHoursInDay < 0 || workingHoursInDay > 24) {
             System.out.println("The hour range is invalid");
-        }else
-            {
-            if(workingHoursInDay<=8)
-            {
+        } else {
+            if (workingHoursInDay <= 8) {
                 salary = workingHoursInDay * 10;
+            } else {
+                salary = 80 + (workingHoursInDay - 8) * 15;
             }
-            else
-                {
-                    salary = 80 + (workingHoursInDay - 8) * 15;
-                }
-                System.out.println("Your salary is " + salary);
-            }
+            System.out.println("Your salary is " + salary);
+        }
     }
+
+    static void displayHighScorePosition(String firstName, int position)
+    {
+        System.out.println(firstName + " managed to get into position " + position + " on the high score table" );
+    }
+
+    static void calculateHighScorePosition()
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Put your score: ");
+        int score = input.nextInt();
+
+        if(score >= 1000)
+        {
+            System.out.println("You are number 1");
+        }
+        else if ((score >= 500) && (score < 1000))
+        {
+            System.out.println("You are number 2");
+        }
+        else if((score >= 100) && (score < 500))
+        {
+            System.out.println("You are number 3");
+        }
+        else if((score < 100) && (score >=0))
+        {
+            System.out.println("You are number 4");
+        }
+    }
+
+//    static long toMilesPerHour()
+//    {
+//        Scanner input = new Scanner(System.in);
+//        System.out.print("Write the speed in kilometres per hour: ");
+//        double kilometresPerHour = input.nextDouble();
+//        double convertedValue = kilometresPerHour * 0.621371192;
+//
+//        if (kilometresPerHour <= 0)
+//        {
+//            System.out.println("-1");
+//        } else
+//            {
+//            System.out.println("The speed is " + "miles per hour");
+//        }
+//
+//        long toMilesPerHour = (long) (convertedValue);
+//
+//        //tried this from the stackoverflow as an attempt to tell the compiler that I do not mind losing precision
+//
+//        return toMilesPerHour;
+//
+//    }
 
     public static void main(String[] args) {
         //Assignment1_1();
         //Assignment1_2();
         //Assignment1_3();
-        Assignment1_4();
+        //Assignment1_4();
         //Assignment1_4_2();
         //Assignment1_5();
+        displayHighScorePosition("Travis", 3 );
+        displayHighScorePosition("Pete", 2);
+        displayHighScorePosition("John", 1);
+        calculateHighScorePosition();
+        //toMilesPerHour();
     }
 
 }
