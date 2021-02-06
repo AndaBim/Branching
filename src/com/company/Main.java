@@ -249,33 +249,25 @@ public class Main {
         }
     }
 
-//    static long toMilesPerHour()
-//    {
-//        Scanner input = new Scanner(System.in);
-//        System.out.print("Write the speed in kilometres per hour: ");
-//        double kilometresPerHour = input.nextDouble();
-//        double convertedValue = kilometresPerHour * 0.621371192;
-//
-//        if (kilometresPerHour <= 0)
-//        {
-//            System.out.println("-1");
-//        } else
-//            {
-//            System.out.println("The speed is " + "miles per hour");
-//        }
-//
-//        long toMilesPerHour = (long) (convertedValue);
-//
-//        //tried this from the stackoverflow as an attempt to tell the compiler that I do not mind losing precision
-//
-//        return toMilesPerHour;
-//
-//    }
+    static long toMilesPerHour(double kilometresPerHour)
+    {
+        double unroundedMilesPerHour=kilometresPerHour * 0.621371192;
+        long milesPerHour = Math.round(unroundedMilesPerHour);
+        if (kilometresPerHour < 0)
+        {
+            return -1;
+        } else
+            {
+            return milesPerHour;
+
+        }
+
+    }
 
     public static void main(String[] args) {
         //Assignment1_1();
         //Assignment1_2();
-        Assignment1_3();
+        //Assignment1_3();
         //Assignment1_4();
         //Assignment1_4_2();
         //Assignment1_5();
@@ -283,7 +275,8 @@ public class Main {
 //        displayHighScorePosition("Pete", 2);
 //        displayHighScorePosition("John", 1);
 //        calculateHighScorePosition();
-        //toMilesPerHour();
+        System.out.println("test -10: "+toMilesPerHour(-10));
+        System.out.println("test 15: "+toMilesPerHour(15));
     }
 
 }
