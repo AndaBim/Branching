@@ -80,21 +80,11 @@ public class Main {
     }
 
     static void Assignment1_3() {
-        short date = 30;
-        short month = 6;
-        short year = 1988;
+        short year;
+        short month;
+        short date;
+        short format;
 
-        if (year < 0 || year > 9999) {
-            System.out.println("Invalid year");
-        }
-        if (month < 1 || month > 12) {
-            System.out.println("Invalid month");
-        }
-        if (date < 1 || date > 31) {
-            System.out.println("Invalid date");
-        } else {
-            System.out.println(year + "/" + month + "/" + date);
-        }
         Scanner input = new Scanner(System.in);
         System.out.print("Please enter the year: ");
         year = input.nextShort();
@@ -102,6 +92,8 @@ public class Main {
         month = input.nextShort();
         System.out.print("Please enter the date: ");
         date = input.nextShort();
+        System.out.println("Please select the date format: 1 - YYYY/MM/DD or 2 - YYYY.MM.DD: ");
+        format = input.nextShort();
 
         if (year < 0 || year > 9999) {
             System.out.println("Invalid year");
@@ -112,154 +104,151 @@ public class Main {
                 if (date < 1 || date > 31) {
                     System.out.println("Invalid date");
                 } else {
-                    System.out.println(year + "/" + month + "/" + date);
-
-                }
-            }
-
-        }
-
-    }
-
-    static void Assignment1_4() {
-        short dayNumber;
-
-        Scanner input = new Scanner(System.in);
-        System.out.print("Please write a number: ");
-        dayNumber = input.nextShort();
-
-        if (dayNumber <= 0 || dayNumber > 365) {
-            System.out.println("Invalid number range; please input a number from 1 to 365");
-        } else
-            System.out.println("The day number is: " + dayNumber);
-        if (dayNumber > 0 && dayNumber <= 31) {
-            System.out.println("It is: January");
-        } else if (dayNumber > 31 && dayNumber <= 59) {
-            System.out.println("It is: February");
-        } else if (dayNumber > 59 && dayNumber <= 90) {
-            System.out.println("It is: March");
-        } else if (dayNumber > 90 && dayNumber <= 120) {
-            System.out.println("It is: April");
-        } else if (dayNumber > 120 && dayNumber <= 151) {
-            System.out.println("It is: May");
-        } else if (dayNumber > 151 && dayNumber <= 181) {
-            System.out.println("It is: June");
-        } else if (dayNumber > 181 && dayNumber <= 212) {
-            System.out.println("It is: July");
-        } else if (dayNumber > 212 && dayNumber <= 243) {
-            System.out.println("It is: August");
-        } else if (dayNumber > 243 && dayNumber <= 273) {
-            System.out.println("It is: September");
-        } else if (dayNumber > 273 && dayNumber <= 304) {
-            System.out.println("It is: October");
-        } else if (dayNumber > 304 && dayNumber <= 334) {
-            System.out.println("It is: November");
-        } else if (dayNumber > 334 && dayNumber <= 365) {
-            System.out.println("It is: December");
-        }
-    }
-
-    static void Assignment1_4_2() {
-
-        short month;
-        short year;
-
-        Scanner input = new Scanner(System.in);
-        System.out.print("Please input the number of the month: ");
-        month = input.nextShort();
-
-        if (month < 1 || month > 12) {
-            System.out.println("The range of the month is invalid; please input number from 1-12");
-        } else {
-            System.out.print("Please input the year: ");
-            year = input.nextShort();
-
-            if (year <= 0 || year > 9999) {
-                System.out.println("The range of the year is invalid; please input number from 1-9999");
-            } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-                System.out.println("Number of days is 31");
-            } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-                System.out.println("Number of days is 30");
-            } else if (month == 2) {
-
-                boolean isLeapYear;
-
-                //isLeapYear = (((year % 4) == 0) && ((year % 100) !=0)) || ((year % 400) ==0);
-                //if (year is not divisible by 4) then (it is a common year)
-                //else if (year is not divisible by 100) then (it is a leap year)
-                //else if (year is not divisible by 400) then (it is a common year)
-                //else (it is a leap year)
-
-                if (year % 4 == 0) {
-                    if (year % 100 != 0) {
-                        isLeapYear = true;
+                    if (format == 1) {
+                        System.out.println(year + "/" + month + "/" + date);
                     } else {
-                        if (year % 400 != 0) {
-                            isLeapYear = false;
-                        } else {
-                            isLeapYear = true;
+                        if (format == 2) {
+                            System.out.println(year + "." + month + "." + date);
+
                         }
                     }
+                }
 
-                } else {
-                    isLeapYear = false;
-                }
-                if (isLeapYear) {
-                    System.out.println("Number of days is 29");
-                } else {
-                    System.out.println("The number of days is 28");
-                }
+            }
+        }}
+
+        static void Assignment1_4 () {
+            short dayNumber;
+
+            Scanner input = new Scanner(System.in);
+            System.out.print("Please write a number: ");
+            dayNumber = input.nextShort();
+
+            if (dayNumber <= 0 || dayNumber > 365) {
+                System.out.println("Invalid number range; please input a number from 1 to 365");
+            } else
+                System.out.println("The day number is: " + dayNumber);
+            if (dayNumber > 0 && dayNumber <= 31) {
+                System.out.println("It is: January");
+            } else if (dayNumber > 31 && dayNumber <= 59) {
+                System.out.println("It is: February");
+            } else if (dayNumber > 59 && dayNumber <= 90) {
+                System.out.println("It is: March");
+            } else if (dayNumber > 90 && dayNumber <= 120) {
+                System.out.println("It is: April");
+            } else if (dayNumber > 120 && dayNumber <= 151) {
+                System.out.println("It is: May");
+            } else if (dayNumber > 151 && dayNumber <= 181) {
+                System.out.println("It is: June");
+            } else if (dayNumber > 181 && dayNumber <= 212) {
+                System.out.println("It is: July");
+            } else if (dayNumber > 212 && dayNumber <= 243) {
+                System.out.println("It is: August");
+            } else if (dayNumber > 243 && dayNumber <= 273) {
+                System.out.println("It is: September");
+            } else if (dayNumber > 273 && dayNumber <= 304) {
+                System.out.println("It is: October");
+            } else if (dayNumber > 304 && dayNumber <= 334) {
+                System.out.println("It is: November");
+            } else if (dayNumber > 334 && dayNumber <= 365) {
+                System.out.println("It is: December");
             }
         }
-    }
 
-    static void Assignment1_5() {
+        static void Assignment1_4_2 () {
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("How many hours a day do you work?");
-        short workingHoursInDay = input.nextShort();
-        int salary;
+            short month;
+            short year;
 
-        if (workingHoursInDay < 0 || workingHoursInDay > 24) {
-            System.out.println("The hour range is invalid");
-        } else {
-            if (workingHoursInDay <= 8) {
-                salary = workingHoursInDay * 10;
+            Scanner input = new Scanner(System.in);
+            System.out.print("Please input the number of the month: ");
+            month = input.nextShort();
+
+            if (month < 1 || month > 12) {
+                System.out.println("The range of the month is invalid; please input number from 1-12");
             } else {
-                salary = 80 + (workingHoursInDay - 8) * 15;
+                System.out.print("Please input the year: ");
+                year = input.nextShort();
+
+                if (year <= 0 || year > 9999) {
+                    System.out.println("The range of the year is invalid; please input number from 1-9999");
+                } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                    System.out.println("Number of days is 31");
+                } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+                    System.out.println("Number of days is 30");
+                } else if (month == 2) {
+
+                    boolean isLeapYear;
+
+                    //isLeapYear = (((year % 4) == 0) && ((year % 100) !=0)) || ((year % 400) ==0);
+                    //if (year is not divisible by 4) then (it is a common year)
+                    //else if (year is not divisible by 100) then (it is a leap year)
+                    //else if (year is not divisible by 400) then (it is a common year)
+                    //else (it is a leap year)
+
+                    if (year % 4 == 0) {
+                        if (year % 100 != 0) {
+                            isLeapYear = true;
+                        } else {
+                            if (year % 400 != 0) {
+                                isLeapYear = false;
+                            } else {
+                                isLeapYear = true;
+                            }
+                        }
+
+                    } else {
+                        isLeapYear = false;
+                    }
+                    if (isLeapYear) {
+                        System.out.println("Number of days is 29");
+                    } else {
+                        System.out.println("The number of days is 28");
+                    }
+                }
             }
-            System.out.println("Your salary is " + salary);
         }
-    }
 
-    static void displayHighScorePosition(String firstName, int position)
-    {
-        System.out.println(firstName + " managed to get into position " + position + " on the high score table" );
-    }
+        static void Assignment1_5 () {
 
-    static void calculateHighScorePosition()
-    {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Put your score: ");
-        int score = input.nextInt();
+            Scanner input = new Scanner(System.in);
+            System.out.print("How many hours a day do you work?");
+            short workingHoursInDay = input.nextShort();
+            int salary;
 
-        if(score >= 1000)
-        {
-            System.out.println("You are number 1");
+            if (workingHoursInDay < 0 || workingHoursInDay > 24) {
+                System.out.println("The hour range is invalid");
+            } else {
+                if (workingHoursInDay <= 8) {
+                    salary = workingHoursInDay * 10;
+                } else {
+                    salary = 80 + (workingHoursInDay - 8) * 15;
+                }
+                System.out.println("Your salary is " + salary);
+            }
         }
-        else if ((score >= 500) && (score < 1000))
+
+        static void displayHighScorePosition (String firstName,int position)
         {
-            System.out.println("You are number 2");
+            System.out.println(firstName + " managed to get into position " + position + " on the high score table");
         }
-        else if((score >= 100) && (score < 500))
+
+        static void calculateHighScorePosition ()
         {
-            System.out.println("You are number 3");
+            Scanner input = new Scanner(System.in);
+            System.out.print("Put your score: ");
+            int score = input.nextInt();
+
+            if (score >= 1000) {
+                System.out.println("You are number 1");
+            } else if ((score >= 500) && (score < 1000)) {
+                System.out.println("You are number 2");
+            } else if ((score >= 100) && (score < 500)) {
+                System.out.println("You are number 3");
+            } else if ((score < 100) && (score >= 0)) {
+                System.out.println("You are number 4");
+            }
         }
-        else if((score < 100) && (score >=0))
-        {
-            System.out.println("You are number 4");
-        }
-    }
 
 //    static long toMilesPerHour()
 //    {
@@ -284,19 +273,20 @@ public class Main {
 //
 //    }
 
-    public static void main(String[] args) {
-        //Assignment1_1();
-        //Assignment1_2();
-        //Assignment1_3();
-        //Assignment1_4();
-        //Assignment1_4_2();
-        //Assignment1_5();
-        displayHighScorePosition("Travis", 3 );
-        displayHighScorePosition("Pete", 2);
-        displayHighScorePosition("John", 1);
-        calculateHighScorePosition();
-        //toMilesPerHour();
-    }
+        public static void main (String[]args)
+        {
+            //Assignment1_1();
+            //Assignment1_2();
+            Assignment1_3();
+            //Assignment1_4();
+            //Assignment1_4_2();
+            //Assignment1_5();
+//        displayHighScorePosition("Travis", 3 );
+//        displayHighScorePosition("Pete", 2);
+//        displayHighScorePosition("John", 1);
+//        calculateHighScorePosition();
+            //toMilesPerHour();
+        }
 
-}
+    }
 
